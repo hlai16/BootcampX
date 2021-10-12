@@ -4,4 +4,4 @@ ON cohorts.id = cohort_id
 JOIN assignment_submissions
 ON students.id = student_id
 GROUP BY cohort
-ORDER BY MAX(assignment_submissions.*);
+ORDER BY total_submissions DESC;
