@@ -1,9 +1,4 @@
-SELECT assignments.day, COUNT(assignments) as number_of_assignments, duration
+SELECT day, count(*) as number_of_assignments, sum(duration) as duration
 FROM assignments
-GROUP BY assignments.day, duration
-ORDER BY (
-    SELECT day 
-    FROM assignments x
-      assignments y
-      WHERE ALL (x.day = y.day)
-);
+GROUP BY day
+ORDER BY day;
